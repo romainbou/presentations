@@ -4,7 +4,7 @@ marp: true
 theme: uncover
 align: left
 paginate: true
-
+header: MyMiniFactory: JAM Stack
 ---
 
 # JAM Stack
@@ -15,68 +15,75 @@ paginate: true
 # What is the JAM Stack?
 #### JavaScript/API/Markdown
 Name introduced by Netlify (CDN provider)
-- No backend serving HTML
+- No backend just static HTML/CSS/JS
 - Generated Frontend
-- APIs only
-- M?
+- Markdown or API for dynamic content
 ---
 
-# How does it work
-## Principles:
-- Static content that can be served by a CDN
+<!-- But it gets a bit more interesing -->
 
----
+# History and problematic
+Netlify's CEO was maintaining broken Wordpress
+- Having to *maintain* a server (resources, updates, CEVs)
+- HTML/CSS in Database problems (Not pure Sementics, Transferability of contents)
+- Databases are just slow
 
-# Why?
-
----
-
-# Servers issues
-CMS/Wordpress issues
-- Having to maintain a server <br>(ressources, updates, CEVs)
-- HTML in Database
----
-
-# Performance
-### The great
-- Amazing first load: everything is served by a close CDN
-- Having to do everything with API calles after can delay things
+<!-- DB are also not scalable -->
 
 ---
 
-# Content management
-- Content in Git repo:
-- Commit site content (even non-devs)
 
-For non-devs: Netlify CMS
+# Why now?
+How is this new?
 
----
-
-# History
-Netlify's CEO was working on many Wordpress
+<!-- pure HTML sites with FTP is not new -->
 
 ---
 
-# Static site generators
-- Hugo `The Fast Gopher`
-- Gatsby `The Full Reactive`
-- Zola `The Rusty french`
+## 1. Static site generators
+- Hugo: The fast `Go`
+- Gatsby: The full-fledge `React`
+- Zola: The frenchy `Rust`
 
 ---
 
-# Example: Scan The World 
-- Content editable by Jon on a CMS
+## 2. CDN and edge performance
+- Cloudflare: 10ms everywhere
+- Scalability
+- DevOps left to CDN companies
+
+---
+
+# Gatsby
+- Using different source of content to build the static site with GraphQL: Markdown, Databases, APIs
+- Powerfull pre-fetching / lazyloading
+
+---
+
+# Example: Workflow 
+- Content editable by non-devs. (Markdown, CMS)
 - Pushed Markdown files to GitHub
 - Automatically builds the font
 
 ---
 
+# Demo
+## Scan The World
+- Netflify CMS
+- MyMiniFactory API 
+- GraphQL local DB 
+<!-- Demo: The Netlify CMS commits to Git -->
+
+---
+
 # Limits
-- Authentication (On first load/Stateless)
-- React and the SSR: downloading the content twice
-(Not specific to JAM)
+- Authentication (On first load/Stateless) (Edge computing?) doesn't solve required DB
+- React and SSR: downloading the content twice
+(SSR, not specific to JAM)
 - Dynamic content with many pages
 (How big?)
+- Content in git Repo problems: assets, images etc.
+<!-- Gatsby a bit slow, Hugo fast -->
 
 ---
 
